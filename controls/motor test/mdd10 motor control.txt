@@ -1,0 +1,22 @@
+motor control tips:
+
+tested on 12V
+
+0 to 125 speed decreases in one direction
+130 to 255 speed increases another direction
+125 to 130 deadband
+
+motor fwd
+0 - 100  map to--> 125 - 0
+
+motor rev
+0 - 100  map to--> 130 - 255
+
+motor break
+128      or       dir = LOW
+
+arduino gets latched if there are sudden state change and for example when motor at high speed changes direction changes direction.
+
+solution: break the motor and introduce small delay just to recover driver(tested)
+
+
